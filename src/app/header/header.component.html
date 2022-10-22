@@ -1,0 +1,16 @@
+<div class="header-container">
+  
+  <div>
+    <input
+      type="search" placeholder="Buscador por nombre.."
+      [(ngModel)]="search"
+      (keydown.enter)="onSearch()" 
+      >
+    <button (click)="onSearch()">Buscar</button>
+  </div>
+  
+  <button (click)="goToCart(true)" >
+    Carrito {{productsCounter}}
+  </button>
+
+</div>

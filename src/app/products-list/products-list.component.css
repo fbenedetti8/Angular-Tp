@@ -1,0 +1,22 @@
+* {
+  margin-top: 50px;
+  margin-left: 400px;
+}
+
+table, th, td {
+  border:1px solid black;
+  padding: 15px;
+}
+
+.cart-add {
+  margin: 0;
+}
+
+.cart-delete {
+  margin: 0;
+}
+
+.checkbox {
+  margin: 0;
+  margin-left: 5px;
+}

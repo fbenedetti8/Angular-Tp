@@ -1,0 +1,53 @@
+
+
+<table *ngIf="!isCart">
+  <tr>
+    <th *ngFor="let columns of productsColumns">
+      {{columns}}
+    </th>
+  </tr>
+  <tr *ngFor="let product of products">
+    <td>
+      {{product.nombre}}
+    </td>
+    <td *ngFor="let period of product.periodos">
+      {{period.valor}}
+      <input 
+        class="checkbox" type="checkbox" 
+        value="{{period.periodo}}" 
+        (change)="onCheckPeriod($event)"
+      >
+    </td>
+    <td>
+      <button (click)="addToCart(product.plan)" class="cart-add"> Agregar al carrito </button>
+    </td>
+  </tr>
+</table>
+
+
+<table *ngIf="isCart">
+  <tr>
+    <th *ngFor="let columns of productsColumns">
+      {{columns}}
+    </th>
+  </tr>
+  <tr *ngFor="let product of products">
+    <td>
+      {{product.id_producto}}
+    </td>
+    <td>
+      {{product.nombre}}
+    </td>
+    <td>
+      {{product.periodo}}
+    </td>
+    <td>
+      {{product.valor}}
+    </td>
+    <td>
+      <button (click)="removeToCart(product.id_producto)" class="cart-delete"> Eliminar del carrito </button>
+    </td>
+  </tr>
+
+</table>
+  
