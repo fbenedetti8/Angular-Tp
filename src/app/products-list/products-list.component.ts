@@ -40,7 +40,7 @@ export class ProductsListComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.products = this.allProducts.filter((e: any) =>
+    this.products = this.allProducts?.filter((e: any) =>
       e.nombre.toUpperCase().includes(this.search.toUpperCase())
     );
   }
