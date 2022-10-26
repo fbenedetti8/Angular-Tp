@@ -19,7 +19,7 @@ export class ProductsListComponent implements OnInit, OnChanges {
   ];
   public productsCartColumns = ['Id', 'Nombre', 'Periodo', 'Valor', 'Acciones'];
   public period: number = 12;
-  public isCart!: boolean;
+  public isCart: boolean = false;
 
   constructor(private cartService: CartService) {}
 
@@ -62,7 +62,7 @@ export class ProductsListComponent implements OnInit, OnChanges {
   addToCart(plan: string) {
     this.cartService
       .addProduct(plan, this.period)
-      .subscribe((data) => console.log(data));
+      .subscribe();
   }
 
   removeToCart(id: number) {
